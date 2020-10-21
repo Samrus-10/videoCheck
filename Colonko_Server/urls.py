@@ -20,6 +20,6 @@ from app import views
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
-    path('/some', csrf_exempt(views.some) ),
+    path('some', csrf_exempt(views.some) ),
     path('admin/', admin.site.urls),
 ]
