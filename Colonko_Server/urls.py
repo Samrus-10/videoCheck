@@ -21,5 +21,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('some', csrf_exempt(views.some) ),
+    path('sendFile', csrf_exempt(view.giveFile)),
     path('admin/', admin.site.urls),
 ]
