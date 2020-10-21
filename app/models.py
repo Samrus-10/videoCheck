@@ -5,3 +5,4 @@ from django.db import models
 class Some(models.Model):
     name = models.TextField(max_length=10)
     love = models.TextField()
+    ho = models.TextField()
