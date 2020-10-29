@@ -20,7 +20,7 @@ from app import views
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
-    path('some', csrf_exempt(views.some) ),
-    path('sendFile', csrf_exempt(view.giveFile)),
+    path('sendFile', csrf_exempt(views.giveFile)),
+    path('dataMarket', csrf_exempt(views.makeDataMarkets)),
     path('admin/', admin.site.urls),
 ]
