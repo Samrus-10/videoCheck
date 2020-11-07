@@ -22,5 +22,9 @@ from django.views.decorators.csrf import csrf_exempt
 urlpatterns = [
     path('sendFile', csrf_exempt(views.giveFile)),
     path('dataMarket', csrf_exempt(views.makeDataMarkets)),
+    #-------------------------------------------------------
+    path('startRecord', csrf_exempt(views.startRecord)),
+    path('sendAudio', csrf_exempt(views.sendAudio)),
+    #-------------------------------------------------------
     path('admin/', admin.site.urls),
 ]
