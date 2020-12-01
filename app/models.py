@@ -9,6 +9,9 @@ class FILE(models.Model):
     directions = models.TextField()
     file_clear_name = models.TextField()
 
+class VideoFILE(models.Model):
+    file_name = models.FileField(upload_to="static/file/")
+
 
 class DataMarket(models.Model):
     id_station = models.TextField()

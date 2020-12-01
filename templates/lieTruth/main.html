@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  {% load static%}
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width">
+
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="{% static 'css/main.css'%}">
+      <style>
+
+        body{
+            background-image: url("{% static 'image/net.jpg'%}");
+        }
+
+        .container{
+            margin-top: 3%;
+        }
+      </style>
+
+      <title>Title place</title>
+  </head>
+  <body>
+
+    <div class="container" align= 'center'>
+        <div class="jumbotron">
+
+            <div id="placeAnswer"><span id="answerFromServer" > empty </span></div>
+            
+            <div align='center'>  
+                <video controls></video>
+            </div>
+
+            <p><span id="minute">00</span>:<span id="seconds">00</span></p>
+        
+            <div align= 'center'>
+                <button id="btnStart" class="btn btn-success">Start</button> 
+                <button id="btnStop" class = 'btn btn-danger'>Stop</button>
+            </div>
+            
+        </div>
+    </div>
+
+      <script src="{% static 'js/main.js' %}"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+  </html>

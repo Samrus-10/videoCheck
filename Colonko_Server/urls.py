@@ -26,5 +26,10 @@ urlpatterns = [
     path('startRecord', csrf_exempt(views.startRecord)),
     path('sendAudio', csrf_exempt(views.sendAudio)),
     #-------------------------------------------------------
+    path('makeFileMp4', csrf_exempt(views.makeFileMp4)),
+    #path('cutFileMp4', csrf_exempt(views.cutFileMp4)),
+    path('main', csrf_exempt(TemplateView.as_view(template_name = 'lieTruth/main.html'))),
+    #-------------------------------------------------------
+
     path('admin/', admin.site.urls),
 ]

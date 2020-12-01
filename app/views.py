@@ -1,13 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse as Response, JsonResponse
 
-from .models import FILE, DataMarket, STATION, AUDIO
+from .models import *
 #-----------------------------
 import json
 import os
 import io
 import random
 from datetime import datetime
+import base64
+import codecs
 #-----------------------------
 # Create your views here.
 
@@ -21,6 +23,8 @@ def giveFile(req):
         #print(file.file_name.name)
         file.save()
     return Response("200(Ok)")
+
+
 
 def makeDataMarkets(req):
     if req.method == 'POST':
@@ -71,11 +75,6 @@ def startRecord(req):
 def sendAudio(req):
     if req.method == 'POST':
         sendObj = json.loads(req.body)
-        # print(sendObj['StationId'])
-        # print(sendObj['AudioFile'])
-        # print(sendObj['TimeStart'])
-        # print(sendObj['TimeEnd'])
-        # print(sendObj['SessionId'])
         data = datetime.now()
 
         path = 'static/file/'
@@ -115,3 +114,31 @@ def sendAudio(req):
 
     return JsonResponse({"Answer": "Ok"})
 
+
+# name dir : data+unickKey file:  по порядку
+
+def makeFileMp4(req):
+    if req.method == 'POST':
+
+        file = VideoFILE()
+        file.file_name = req.FILES['data']
+        file.save()
+    
+    number = random.randint(0,5)
+
+    if(number % 2 == 0):
+        return JsonResponse({'answer':'true'})
+    else:
+        return JsonResponse({'answer': 'false'})
+
+# def cutFileMp4(req):
+#     if req.method == 'POST':
+#         file = VideoFILE()
+#         file.file_name = req.FILES['cut']
+#         file.save()
+        
+#     return JsonResponse({'responce':'200(okay)'})
+
+
+
+    
