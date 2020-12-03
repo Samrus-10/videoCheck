@@ -26,7 +26,7 @@ SECRET_KEY = 'mzb&terlg6hxqtitx3_w#j1x@zh%y)(%q*pwf_7^udm+q%+6&&'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '178.154.250.25',
+    'http://178.154.250.25',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

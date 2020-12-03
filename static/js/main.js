@@ -114,7 +114,7 @@ navigator.mediaDevices.getUserMedia(constraintObj)
           let form = new FormData()
           form.append('data', blob ,'myFile.mp4')
 
-          let request = await fetch('https://178.154.250.25:8000/makeFileMp4',{
+          let request = await fetch('http://0.0.0.0:8000/makeFileMp4',{
                   method : 'POST',
                   body: form
           })
