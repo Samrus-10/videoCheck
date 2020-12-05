@@ -25,10 +25,10 @@ function makeTime(){
         document.getElementById('seconds').innerText = String(seconds)
 }
 
-if (navigator.mediaDevices === undefined) {
-    navigator.mediaDevices = {}
-    navigator.mediaDevices.getUserMedia = function(constraintObj) {
-        let getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia
+if (window.navigator.mediaDevices === undefined) {
+    window.navigator.mediaDevices = {}
+    window.navigator.mediaDevices.getUserMedia = function(constraintObj) {
+        let getUserMedia = window.navigator.webkitGetUserMedia || window.navigator.mozGetUserMedia
         if (!getUserMedia) {
             return Promise.reject( new Error ('getUserMedia does not works in this browser'))
         }
@@ -37,7 +37,7 @@ if (navigator.mediaDevices === undefined) {
         });
     }
 }else{
-    navigator.mediaDevices.enumerateDevices()
+    window.navigator.mediaDevices.enumerateDevices()
     .then(devices => {
         devices.forEach(device=>{
             //console.log(device.kind.toUpperCase(), device.label)
@@ -48,7 +48,7 @@ if (navigator.mediaDevices === undefined) {
     })
 }
 
-navigator.mediaDevices.getUserMedia(constraintObj)
+window.navigator.mediaDevices.getUserMedia(constraintObj)
   .then(function(mediaStreamObj) {
       let video = document.querySelector('video')
       if ("srcObject" in video) {
