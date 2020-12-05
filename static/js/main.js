@@ -98,7 +98,7 @@ navigator.mediaDevices.getUserMedia(constraintObj)
         clearInterval(pointForCut)
         clearInterval(pointForTimer)
         mediaRecorder.stop()
-        console.log("stop")
+        //console.log("stop")
 
         document.getElementById('minute').innerText = '0'
         document.getElementById('seconds').innerText = '00'
@@ -120,7 +120,7 @@ navigator.mediaDevices.getUserMedia(constraintObj)
           })
 
           let responce = await request.json()
-          console.log(responce.answer)
+          //console.log(responce.answer)
           if(responce.answer == 'true'){
               document.getElementById('answerFromServer').innerText = 'Ложь не замеченна'
               document.getElementById('placeAnswer').style.backgroundColor = '#1D6B18'
@@ -133,5 +133,6 @@ navigator.mediaDevices.getUserMedia(constraintObj)
       }
   })
   .catch(function(err) {
+      alert(err.message)
       console.log(err.name, err.message)
   })
