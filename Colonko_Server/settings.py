@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'mzb&terlg6hxqtitx3_w#j1x@zh%y)(%q*pwf_7^udm+q%+6&&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    '178.154.250.25', 'localhost'
+    '178.154.250.25', 'localhost', '127.0.0.1'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -134,5 +134,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets/')
+
 
