@@ -28,7 +28,7 @@ function makeTime(){
 if (window.navigator.mediaDevices === undefined) {
     window.navigator.mediaDevices = {}
     window.navigator.mediaDevices.getUserMedia = function(constraintObj) {
-        let getUserMedia = window.navigator.webkitGetUserMedia || window.navigator.mozGetUserMedia
+        let getUserMedia = window.navigator.webkitGetUserMedia || window.navigator.mozGetUserMedia || window.navigator.getUserMedia
         if (!getUserMedia) {
             console.log('here')
             return Promise.reject( new Error ('getUserMedia does not works in this browser'))
