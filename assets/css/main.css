@@ -1,0 +1,26 @@
+
+video{
+    width: 500px;
+    height: 350px;
+}
+
+.jumbotron{
+    width: 60%;
+}
+
+#placeAnswer{
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+    width: 70%;
+    border-radius: 50px;
+    background-color: steelblue;
+}
+
+#answerFromServer{
+    font-family: monospace;
+    font-size: medium;
+    font-weight: bolder;
+    font-variant: small-caps;
+    letter-spacing: 3px;
+}
